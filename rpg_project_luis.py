@@ -4,23 +4,25 @@ Created: Jul 27, 2020
 Dyl's Final Assignment
 """
 
+GPA = 3.0
+
 def intro(name):
     """reads the introduction/details of the game"""
     print("\nWelcome back to high school, " + name + "! This game is full of high school wonders, teen-age urges, and countless AP/IB courses! The objective of the game is to finish your first high school year with the highest GPA! (or at least don't get kicked out of school by letting your GPA drop below 2.0) But I warn you!!! Do not let your freshman year go by so quickly! Have fun and explore your adolescence. \nBecause I feel courteous, you will start off with a 3.0 GPA. Good luck, " + name + "! You will need it.")
 
 
-def check_gpa(gpa):
+def check_gpa():
     """prints the gpa of player"""
-    if gpa >= 3.0:
-        print("\nYour GPA is " + str(gpa) + "!")
+    if GPA >= 3.0:
+        print("\nYour GPA is " + str(GPA) + "!")
     else:
-        print("\nYour GPA is " + str(gpa) + ".")
+        print("\nYour GPA is " + str(GPA) + ".")
         
 
-def friends_month(gpa):
+def friends_month():
     """runs game through freshman year!"""
-    fresh_gpa = gpa
-    #pulls gpa from main() and makes it useful here!
+    global GPA
+    # pulls gpa from main() and makes it useful here!
     print("\nIt's your freshman year in high school! Your are young, immature, and insecure. So lets find some friends!")
     
     # runs Focus on finding friends
@@ -28,7 +30,7 @@ def friends_month(gpa):
     classmate = {"A": "Jesus", "B": "Cathy", "C": "Claudia"}
     print("You plan to follow-up with one of your classmates after school.")
     for k, v in classmate.items():
-        #TYP used for loop to be able to print the options in a clean and neat manner
+        # TYP used for loop to be able to print the options in a clean and neat manner
         print(k + ") " + v)
     fst_friend = input("Who do you want to reach out to? ").upper()    
     #used the users input to later check what theu want to futher investigate (person in this case)
@@ -40,7 +42,7 @@ def friends_month(gpa):
             print(k + ") " + v)
         choice = input("\nHow do you plan to spend this weekend? ").upper()                 
         if choice == "A":
-            #"Go to the truck meet with Jesus"
+            # Go to the truck meet with Jesus
             print("\n{-------- OPTION A --------}\nYou didn't want to disappoint Jesus the first time he invited you somewhere!\n\nOn the way to the truck meet, Jesus blasts his truck speakers to some spanish music you've never heard before, he calls them 'Sonideras.' That was an odd start to the night but you ended up liking his music. At the truck meet you got meet a bunch of Jesus' friends! Most of them dress similar to him, and very amiable! They immedately initial dialogue as if you had known them for ages. After countless hours of watching trucks burning tires in the parking lot, the police arrive to the meet. As soon as the sirens went off, Jesus instinctively took off for the 'MaMaLoNa.'\n\nSince you see people running to their cars like crazy you begin to run too but dont remember when Jesus parked!")
             meet = {"A": "Run frantically to the nearest truck", "B": "Call your mom to pick you up"}
             for k, v in meet.items():
@@ -48,31 +50,31 @@ def friends_month(gpa):
             at_meet = input("\nWhat do you plan on doing now? ").upper() 
             if at_meet == "A":
                 print("\n{-------- OPTION A --------}\nYou didn't want to call you mom since she would accuse Jesus of being a bad influence.\n\nYou ran to the nearest truck you could find. Luckily, the owner of the truck was one of Jesus' friends you met earlier, Jose. He tells you to jump into the back of his truck and drops you off at a gas station a mile away where Jesus was waiting for you. You and Jesus laugh the whole incident off on the way back home.\nMonday, Jesus can help but pass notes during Bio reminding you about the weekend and how you both forgot to complete the problem set. You laugh it off the entire period and forget to take notes.")
-                fresh_gpa -= .3
-                check_gpa(fresh_gpa)
+                GPA -= .3
+                check_gpa()
             else:
                 print("\n{-------- OPTION B --------}\nYou called your mom because you feared that you wouldnt find Jesus.\n\nFortunately your loving mom arrives as swiftly as a bear to her cub in danger. She brings you home, cooks you dinner, and advises that you don't go to truck meets with Jesus anymore. Unfortuately you were so anxious of going to the truck meet that you forgot to complete the problem set. Monday comes and both you and Jesus can't turn in the problem set")
-                fresh_gpa -= .3
-                check_gpa(fresh_gpa)  
+                GPA -= .3
+                check_gpa()  
             not_completed_game = "NO"
         elif choice == "B":
-            #"Stay home and complete the study set"
+            # Stay home and complete the study set
             print("\n{-------- OPTION B --------}\nYou chose to stay home to complete the problem set!\n\nAlthough you do feel bad about not joining Jesus to the truck meet you do feel extremely knowledgeable on the animal and plant cell structure! However, you are still sad that you couldn't go to the meet with Jesus. So you debate wether you should send him a text or wait til Monday to apologize in person.")
-            fresh_gpa += .3
-            check_gpa(fresh_gpa)                 
+            GPA += .3
+            check_gpa()                 
             text = {"A": "Send Jesus a message", "B": "Wait til Monday to see him"}
             for k, v in text.items():
                 print(k + ") " + v)
             debate = input("\nWhat do you plan on doing? ").upper()                 
             if debate == "A":
-                #send him a text
+                # send him a text
                 print("\n{-------- OPTION A --------}\nYou sent Jesus a text message!\n\nHe responds in a couple minutes telling you not to worry about it! He mentioned that he would invite you to the next meet. A week went by of cheerful dialouge with Jesus and he invites you to another truck meet! But this time the Bio instructor handed you an exam.")
                 weekend_1 = {"A": "Go to the truck meet with Jesus", "B": "Stay home and complete the study guide", "C": "Go to the truck meet and stay-up late on Sunday to complete the study guide"}
                 for k, v in weekend_1.items():
                     print(k + ") " + v)
                 choice = input("\nHow do you plan to spend this weekend? ").upper()                 
                 if choice == "A":
-                    #"Go to the truck meet with Jesus"
+                    # Go to the truck meet with Jesus
                     print("\n{-------- OPTION A --------}\nYou didn't want to disappoint Jesus the first time he invited you somewhere!\n\nOn the way to the truck meet, Jesus blasts his truck speakers to some spanish music you've never heard before, he calls them 'Sonideras.' That was an odd start to the night but you ended up liking his music. At the truck meet you got meet a bunch of Jesus' friends! Most of them dress similar to him, and very amiable! They immedately initial dialogue as if you had known them for ages. After countless hours of watching trucks burning tires in the parking lot, the police arrive to the meet. As soon as the sirens went off, Jesus instinctively took off for the 'MaMaLoNa.'\nSince you see people running to their cars like crazy you begin to run too but dont remember when Jesus parked!")
                     meet = {"A": "Run frantically to the nearest truck", "B": "Call your mom to pick you up"}
                     for k, v in meet.items():
@@ -80,26 +82,26 @@ def friends_month(gpa):
                     at_meet = input("\nWhat do you plan on doing now? ").upper() 
                     if at_meet == "A":
                         print("\n{-------- OPTION A --------}\nYou didn't want to call you mom since she would accuse Jesus of being a bad influence.\n\nYou ran to the nearest truck you could find. Luckily, the owner of the truck was one of Jesus' friends you met earlier, Jose. He tells you to jump into the back of his truck and drops you off at a gas station a mile away where Jesus was waiting for you. You and Jesus laugh the whole incident off on the way back home.\nMonday, Jesus can help but pass notes during Bio reminding you about the weekend and how you both forgot to complete the problem set. You laugh it off the entire period and forget to take notes.")
-                        fresh_gpa -= .3
-                        check_gpa(fresh_gpa)
+                        GPA -= .3
+                        check_gpa()
                     else:
                         print("\n{-------- OPTION B --------}\nYou called your mom because you feared that you wouldnt find Jesus.\n\nFortunately your loving mom arrives as swiftly as a bear to her cub in danger. She brings you home, cooks you dinner, and advises that you don't go to truck meets with Jesus anymore. Unfortuately you were so anxious of going to the truck meet that you forgot to complete the problem set. Monday comes and both you and Jesus can't turn in the problem set")
-                        fresh_gpa -= .3
-                        check_gpa(fresh_gpa)
+                        GPA -= .3
+                        check_gpa()
                     not_completed_game = "NO"
                 elif choice == "B":
                     print("\n{-------- OPTION B --------}\nYou declined Jesus' second offer to join him at the truck meet.\n\nForntuately you studied immensely to exceed the exam Monday! However, you feel sad because while you completed you exam without breaking a sweat, while Jesus slept right through the test. He also ignored you after class :(")
-                    fresh_gpa += .1
-                    check_gpa(fresh_gpa)     
+                    GPA += .1
+                    check_gpa()     
                 else:
                     print("\n{-------- OPTION C --------}\nYou declined Jesus' first offer and you don't want to disappoint him a second time!\n\nYou crammed most of the content for the exam before meeting up with Jesus to go the truck meet. You go and you have an amazing time! You met a ton of his friends, they dress very similar to him and all have the same haircut as he does too! Unfortunately the Police arrived after someone call them because of the screeching tires and all the smake they produced. You had enough time to get a good nights rest before the exam. Monday came around and you didnt do as you would have studied more but study got a 80% on your first exam!")
-                    fresh_gpa += .1
-                    check_gpa(fresh_gpa) 
+                    GPA += .1
+                    check_gpa() 
                 not_completed_game = "NO"
             else:
-                #wait til monday
+                # wait until monday
                 print("\n{-------- OPTION B --------}\nYou declined Jesus' offer to join him at the truck meet and it's Monday.\n\nYou formally apologize. He says not to worry about it, but you know that deep down both you and him lost a friend. Taking to him feels unnatural, so you avoid people like him from now on. In the bright side of things, you completed the study set!")
-                check_gpa(fresh_gpa)
+                check_gpa()
                 not_completed_game = "NO"
         else:
             print("\n{-------- OPTION C --------}\nYou didn't want to disappoint Jesus the first time he invited you somewhere but you also didn't want to blow off your study set!\n\nOn the way to the truck meet, Jesus blasts his truck speakers to some spanish music you've never heard before, he calls them 'Sonideras.' That was an odd start to the night but you ended up liking his music. At the truck meet you got meet a bunch of Jesus' friends! Most of them dress similar to him, and very amiable! They immedately initial dialogue as if you had known them for ages. After countless hours of watching trucks burning tires in the parking lot, the police arrive to the meet. As soon as the sirens went off, Jesus instinctively took off for the 'MaMaLoNa.'\n\nSince you see people running to their cars like crazy you begin to run too but dont remember when Jesus parked!")
@@ -111,8 +113,8 @@ def friends_month(gpa):
                 print("\n{-------- OPTION A --------}\nYou didn't want to call you mom since she would accuse Jesus of being a bad influence.\n\nYou ran to the nearest truck you could find. Luckily, the owner of the truck was one of Jesus' friends you met earlier, Jose. He tells you to jump into the back of his truck and drops you off at a gas station a mile away where Jesus was waiting for you. You and Jesus laugh the whole incident off on the way back home.\nMonday, Jesus can help but pass notes during Bio reminding you about the weekend and how you both forgot to complete the problem set. You laugh it off the entire period and forget to take notes.")
             else:
                 print("\n{-------- OPTION B --------}\nYou called your mom because you feared that you wouldnt find Jesus.\n\nFortunately your loving mom arrives as swiftly as a bear to her cub in danger. She brings you home, cooks you dinner, and advises that you don't go to truck meets with Jesus anymore. Unfortuately you were so anxious of going to the truck meet that you forgot to complete the problem set. Monday comes and both you and Jesus can't turn in the problem set") 
-            fresh_gpa -= .3
-            check_gpa(fresh_gpa) 
+            GPA -= .3
+            check_gpa() 
             not_completed_game = "NO"
         
     elif fst_friend == "B":
@@ -130,12 +132,12 @@ def friends_month(gpa):
             brunch = input("\nWhat do you plan on doing now? ").upper()                 
         elif brunch == "B":
             print("\n{-------- OPTION B --------}\nYou chose to decline Cathy's offer to brunch!\n\nShe now felt the need to make you seem like a rude person. Because she is wealthy, people who tried being her friend now know about you. On the bright side, as everyone was too worried about spreading gossip, you studied for the quiz! Which means that you did really well on the first quiz! However, people continue to talk smack about you!")
-            fresh_gpa += .3
-            check_gpa(fresh_gpa)                 
+            GPA += .3
+            check_gpa()                 
         else:
             print("\n{-------- OPTION C --------}\nYou asked Cathy if she would like to study for the quiz after brunch!\n\nShe was flattered at the inquisition! The weekend came and both of you were extremely excited about learning more about each other! Since you both studied, you guys received amazing scores on the quiz! But the instructor assumed you cheated so she separated you.")
-            fresh_gpa += .2
-            check_gpa(fresh_gpa)
+            GPA += .2
+            check_gpa()
         not_completed_game = "NO"
     else:
         # runs Claudia 
@@ -151,18 +153,18 @@ def friends_month(gpa):
                 print(k + ") " + v)
             dump = input("\nWhat do you want to do with Claudia? ").upper() 
             if dump == "A":
-                print("\n{-------- OPTION A --------}\nYou chose to invite Claudia to lunch!\n\nUnfortunately, she declined you offer, rather disrespectfully.\nBecause you chose to invest so much time in Claudia you miss a biology assignment!")
-                fresh_gpa -= .2
-                check_gpa(fresh_gpa)                  
+                print("\n{-------- OPTION A --------}\nYou chose to invite Claudia to lunch!\n\nUnfortunately, she declined you offer, rather disrespectfully.\nBecause you chose to invest so much time in Claudia you missed a biology assignment!")
+                GPA -= .2
+                check_gpa()                  
             else:
                 print("\n{-------- OPTION B --------}\nYou chose to find another friend, however, many people saw you talking to Claudia and now they assumed that you are just like her! Now no one wants to be your friend.\nBecause you chose to invest so much time in looking for a friend you miss a biology assignment!")
-                fresh_gpa -= .2
-                check_gpa(fresh_gpa)
+                GPA -= .2
+                check_gpa()
             not_completed_game = "NO"
         elif preception == "B":
             print("\n{-------- OPTION B --------}\nYou chose to let Claudia be Claudia!\n\nYou gave yourself room to read people's intentions before they played you! And this allowed you to focus on your assignments!")
-            fresh_gpa += .2
-            check_gpa(fresh_gpa) 
+            GPA += .2
+            check_gpa() 
             not_completed_game = "NO"
         else:
             print("\n{-------- OPTION C --------}\nYou chose to mess with Claudia, in hopes to humble her down!\n\nYou are considering giving her helpful feedback on her attitude towards others or recording her stuck-upness secretly and uploading it online.") 
@@ -175,38 +177,39 @@ def friends_month(gpa):
             else:
                 print("\n{-------- OPTION B --------}\nYou chose to record her sassy ways!\n\nAfter uploading her clips, your account received thousands of subscribers! However, Claudia figured you out and sued you for Defamation. You were suspended because of this.")
             not_completed_game = "NO"
-    return [fresh_gpa] + [not_completed_game]
+    return [GPA] + [not_completed_game]
         
 
 
 def main():
     """This function excutes the entire game!"""
+    global GPA
     user_name = input("Greetings lad! What's your name? ").capitalize()
     intro(user_name)
-    gpa = 3.0
-    #started everyone out w/ 3.0 gpa
-    check_gpa(gpa)
+    # started everyone out w/ 3.0 gpa
+    GPA = 3.0
+    check_gpa()
     color = input("\nBefore we begin what is your favorite color? If your favorite color is my favorite too, then your GPA will start off at 3.2! ")
-    print("Sorry, " + color + " stinks!")
-    #implemented this just for fun
-    print("\n*****Quick side note, every question defaults to the last option!*****")
+    print("\nSorry, " + color + " stinks!")
+    # implemented this just for fun
+    print("\n***** Quick side note, every question defaults to the last option! *****")
     
     not_completed_game = True
-    #used a variable to boolean to ensure that our game still has questions and is able to be played
+    # used a variable to boolean to ensure that our game still has questions and is able to be played
     
-    while (gpa > 2.0) and not_completed_game:
+    while (GPA > 2.0) and not_completed_game:
         # while loop!
         # one condition should be compleating the game (varibale that starts out False and changes to True as soon as the game has been completed
         # gpa is > 2.0
-        bb_list = friends_month(gpa)
-        gpa = bb_list[0]
+        bb_list = friends_month()
+        GPA = bb_list[0]
         if bb_list[1] == "NO":
             break
-    if gpa > 3.5:
-        print("congradulations! " + user_name + ", you have completed your freshmen year in High School with a " + str(gpa) + "! You deserve a cookie!")
-    elif gpa < 2.0:
+    if GPA > 3.5:
+        print("congradulations! " + user_name + ", you have completed your freshmen year in High School with a " + str(GPA) + "! You deserve a cookie!")
+    elif GPA < 2.0:
         print("Your high school years must have sucked if you couldnt complete this simple game!")
     else:
-        print("congradulations! " + user_name + ", you passed with a " + str(gpa) + "... at least.")
+        print("Congratulations! " + user_name + ", you passed with a " + str(GPA) + "... at least.")
     
 main()
