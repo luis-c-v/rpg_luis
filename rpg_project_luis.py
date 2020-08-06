@@ -199,8 +199,8 @@ def main():
     
     while (GPA > 2.0) and not_completed_game:
         # while loop!
-        # one condition should be compleating the game (varibale that starts out False and changes to True as soon as the game has been completed
-        # gpa is > 2.0
+        # one condition should be completing the game (variable that starts out False and changes to True as soon as the game has been completed)
+        # second should be while the gpa is > 2.0
         bb_list = friends_month()
         GPA = bb_list[0]
         if bb_list[1] == "NO":
@@ -208,7 +208,7 @@ def main():
     if GPA > 3.5:
         print("congradulations! " + user_name + ", you have completed your freshmen year in High School with a " + str(GPA) + "! You deserve a cookie!")
     elif GPA < 2.0:
-        print("Your high school years must have sucked if you couldnt complete this simple game!")
+        print("Your high school years must have sucked if you couldn't complete this simple game!")
     else:
         print("Congratulations! " + user_name + ", you passed with a " + str(GPA) + "... at least.")
     
