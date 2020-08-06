@@ -211,5 +211,5 @@ def main():
         print("Your high school years must have sucked if you couldn't complete this simple game!")
     else:
         print("Congratulations! " + user_name + ", you passed with a " + str(GPA) + "... at least.")
-    
+        
 main()
